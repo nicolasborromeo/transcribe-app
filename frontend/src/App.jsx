@@ -1,5 +1,5 @@
 import './App.css'
-import { createBrowserRouter, RouterProvider, NavLink, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import TranscriptDetails from './Components/TranscriptDetails';
 
 const router = createBrowserRouter([
