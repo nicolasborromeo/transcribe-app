@@ -12,6 +12,9 @@ export default defineConfig(({ mode }) => ({
     })
   ],
   server: {
-    open: true
-  }
+    open: true,
+    proxy: {
+      "/api": "http://127.0.0.1:5000",
+    },
+  },
 }))
