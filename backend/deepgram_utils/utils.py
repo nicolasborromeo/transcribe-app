@@ -29,5 +29,5 @@ def get_transcript(payload, options=prerecorded_options):
     response = deepgram.listen.rest.v("1").transcribe_file(payload, options)
     return json.loads(response) #parse the json string into a dictionary
 
-if __name__ == "__main__":
-    get_transcript()
+# if __name__ == "__main__":
+#     get_transcript()

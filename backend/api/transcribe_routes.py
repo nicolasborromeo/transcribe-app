@@ -1,10 +1,15 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
+from deepgram_utils import utils
 
 transcribe_routes = Blueprint('transcribe', __name__)
 
 @transcribe_routes.route('/', methods=['GET', 'POST'])
 def transcribe():
-    response = {
-        'message': 'Response'
+
+    audiofile = request.files['audio'] #get the audio file = FileSource
+    buffer = audiofile.read() # read the audiofile directly from FileSource
+    payload = {
+        'buffer': buffer
     }
+    response = utils.get_transcript(payload)
     return jsonify(response)
