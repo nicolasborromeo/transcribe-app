@@ -4,7 +4,7 @@ export default function Transcript({response}){
     const [transcript, setTranscript] = useState(null)
     useEffect(()=>{
             if(response){
-                setTranscript(response['results']['channels'][0]['alternatives'][0]['transcript'])
+                setTranscript(response['results']['channels'][0]['alternatives'][0]['paragraphs']['transcript'])
             } else {
                 setTranscript(null)
             }
@@ -13,7 +13,12 @@ export default function Transcript({response}){
 
     if (transcript) {
         return (
-            <p>{transcript}</p>
+            <div>
+                <p>Transcript:</p>
+                <pre style={{whiteSpace:'pre-wrap', wordWrap:'break-word'}}>
+                    {transcript}
+                </pre>
+            </div>
         )
     }
 }

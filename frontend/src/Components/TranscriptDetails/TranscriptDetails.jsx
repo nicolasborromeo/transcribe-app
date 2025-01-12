@@ -7,11 +7,10 @@ export default function TranscriptDetails() {
     const [loadingTranscript, setLoadingTranscript] = useState(false)
     const [response, setResponse] = useState(null)
 
-
-
     const getTranscript = async (e) => {
         e.preventDefault()
         const formData = new FormData(e.target) //creating fromData to be able to send files
+        
         setResponse(null)
         setLoadingTranscript(true)
         try {
@@ -33,13 +32,13 @@ export default function TranscriptDetails() {
         }
     }
 
-
-
-
     return (
         <div>
             <h1 className="page-h1">Transcript Details</h1>
-            <form method="POST" onSubmit={getTranscript} encType="multipart/form-data">
+            <form
+                method="POST"
+                onSubmit={getTranscript}
+                encType="multipart/form-data">
                 <input
                     type="file"
                     name="audio"
