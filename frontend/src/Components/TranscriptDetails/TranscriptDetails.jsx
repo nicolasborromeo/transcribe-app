@@ -10,7 +10,7 @@ export default function TranscriptDetails() {
     const getTranscript = async (e) => {
         e.preventDefault()
         const formData = new FormData(e.target) //creating fromData to be able to send files
-        
+
         setResponse(null)
         setLoadingTranscript(true)
         try {
@@ -42,7 +42,7 @@ export default function TranscriptDetails() {
                 <input
                     type="file"
                     name="audio"
-                    accept=".mp3/.wav/.mp4"
+                    accept=".mp3/.wav"
                 />
                 <button type="submit">Get Transcript</button>
             </form>
