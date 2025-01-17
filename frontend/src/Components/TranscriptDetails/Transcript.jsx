@@ -14,7 +14,7 @@ export default function Transcript({response}){
     if (transcript) {
         return (
             <div>
-                <p>Transcript:</p>
+                
                 <pre style={{whiteSpace:'pre-wrap', wordWrap:'break-word'}}>
                     {transcript}
                 </pre>
