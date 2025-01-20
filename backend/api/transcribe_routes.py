@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from deepgram_utils import utils
 from deepgram import FileSource
-import ffmpeg
+
 
 transcribe_routes = Blueprint('transcribe', __name__)
 
